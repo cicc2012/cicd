@@ -30,7 +30,7 @@ jobs:
       - name: Zip the HTML file
         run: |
           if ls index.html 1> /dev/null 2>&1; then
-            zip -r html-files.zip index.html
+            zip -r index.zip index.html
           else
             echo "No HTML files found to zip."
             exit 1
