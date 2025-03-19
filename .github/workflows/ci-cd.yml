@@ -39,4 +39,4 @@ jobs:
       # Step 5: Sync the zipped file to the S3 bucket
       - name: Deploy to S3
         run: |
-          aws s3 cp html-files.zip s3://uco-cicc-media/proj3/
+          aws s3 cp index.zip s3://uco-cicc-media/proj3/
