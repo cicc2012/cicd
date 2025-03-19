@@ -35,8 +35,9 @@ Before you start, ensure you have the following:
 ### Step 1: Store AWS Credentials in GitHub Secrets
 
 1. Go to your **GitHub repository**.
-2. Navigate to **Settings** > **Secrets** > **New repository secret**.
+2. Navigate to **Settings** > **Secrets and variables** > **Actions** > **New repository secret**.
 3. Add the following secrets:
+   - AWS_S3_BUCKET_NAME: Your AWS S3 bucket name.
    - AWS_ACCESS_KEY_ID: Your AWS Access Key ID.
    - AWS_SECRET_ACCESS_KEY: Your AWS Secret Access Key.
 
@@ -84,11 +85,13 @@ jobs:
       # Step 5: Sync the zipped file to the S3 bucket
       - name: Deploy to S3
         run: |
-          aws s3 cp html-file.zip s3://your-s3-bucket-name/ --acl private --region us-east-1
+          aws s3 cp html-file.zip s3://${{ secrets.AWS_S3_BUCKET_NAME }}/ --acl private --region us-east-1
 ```
 
 ### Step 4: Push Changes and Trigger the Workflow
+If you are using VS Code with Github, you can make the commit and sync using the visual interface. 
 
+If you are using command line:
 1. **Commit and Push** your changes (including the GitHub Actions workflow) to the main branch:
 2. `git add .github/workflows/ci-cd.yml`
 3. `git commit -m "Add CI/CD workflow to deploy HTML to S3"`
