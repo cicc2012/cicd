@@ -34,6 +34,7 @@ jobs:
           else
             echo "No HTML files found to zip."
             exit 1
+          fi
 
       # Step 5: Sync the zipped file to the S3 bucket
       - name: Deploy to S3
