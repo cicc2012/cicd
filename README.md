@@ -85,7 +85,7 @@ jobs:
       # Step 5: Sync the zipped file to the S3 bucket
       - name: Deploy to S3
         run: |
-          aws s3 cp html-file.zip s3://${{ secrets.AWS_S3_BUCKET_NAME }}/ --acl private --region us-east-1
+          aws s3 cp html-file.zip s3://your-s3-bucket/path/
 ```
 
 ### Step 4: Push Changes and Trigger the Workflow
