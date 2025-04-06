@@ -20,7 +20,9 @@ In this demonstration, we will showcase how to set up a **Continuous Integration
 - Setting up GitHub Actions for CI/CD.
 - Syncing a simple HTML file from GitHub to a private S3 bucket.
 - Using AWS CLI in the GitHub Actions workflow to interact with S3.
-** Diagram of this demo **
+
+**Diagram of this demo**
+  
 ![diagram](cicd.png)
 
 ## Prerequisites
